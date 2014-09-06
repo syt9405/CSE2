@@ -1,10 +1,10 @@
 //Yutong Song 
 // 9/5/2014
-//HomeworkAssignment2 Java Program
+//Arithmetic Java Program
 //
 
 // define a class
-public class HomeworkAssignment2{
+public class Arithmetic{
     
     // add main method
     public static void main(String[] args) {
@@ -54,10 +54,10 @@ public class HomeworkAssignment2{
  int g = (int)totalPurchase$;
  int h = (int)totalPaid$;
 
-System.out.println("They bought three items, as socks, drinking glasses, and envelopes.");
+System.out.println("They bought 3 items, as socks, drinking glasses, and envelopes.");
 // print out Total cost of each kind of item; sales tax for that total cost  
 System.out.println("The number of pairs of socks is 3 and the cost per pair is $2.58 .");
-System.out.println("The total cost (before tax) of socks is $"+(a/100.0)+" and the sales tax for total socks is $"+(b/100.0)+ "  .");
+System.out.println("The total cost (before tax) of socks is $"+(a/100.0)+" and the sales tax for total socks is $"+(b/100.0)+ " .");
 // glasses
 System.out.println("the number of drinking glasses is 6 and the cost per glass is $2.29 .");
 System.out.println("The total cost (before tax) of glasses is $"+(c/100.0)+" and the sales tax for total glasses is $"+(d/100.0)+ " .");
