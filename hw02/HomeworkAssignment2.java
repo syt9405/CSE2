@@ -32,17 +32,17 @@ public class HomeworkAssignment2{
     
     // run the calculations
     
-    totalSockCost$=nSocks*sockCost$;       // total cost of socks
-    totalSockTax$=taxPercent*totalSockCost$; //total cost of socks with tax
+    totalSockCost$=nSocks*sockCost$*100;       // total cost of socks
+    totalSockTax$=taxPercent*totalSockCost$*100; //total cost of socks with tax
    
-    totalGlassCost$=nGlasses*glassCost$;      // total cost of glasses
-    totalGlassTax$=taxPercent*totalGlassCost$;  // total cost of glasses with tax
+    totalGlassCost$=nGlasses*glassCost$*100;      // total cost of glasses
+    totalGlassTax$=taxPercent*totalGlassCost$*100;  // total cost of glasses with tax
    
-    totalEnvelopeCost$=nEnvelopes*envelopeCost$;   // total cost of envelopes
-    totalEnvelopeTax$=taxPercent*totalEnvelopeCost$; //total cost of envelopes with tax
+    totalEnvelopeCost$=nEnvelopes*envelopeCost$*100;   // total cost of envelopes
+    totalEnvelopeTax$=taxPercent*totalEnvelopeCost$*100; //total cost of envelopes with tax
    
-    totalPurchase$=totalEnvelopeCost$+totalGlassCost$+totalSockCost$;  // total purchases without tax
-    totalPaid$=taxPercent*totalSockCost$+taxPercent*totalGlassCost$+taxPercent*totalEnvelopeCost$;  
+    totalPurchase$=totalEnvelopeCost$+totalGlassCost$+totalSockCost$*100;  // total purchases without tax
+    totalPaid$=taxPercent*totalSockCost$+taxPercent*totalGlassCost$+taxPercent*totalEnvelopeCost$*100;  
     // total paid for this transaction, including sales tax
     
  int a = (int)totalSockCost$;
@@ -53,19 +53,24 @@ public class HomeworkAssignment2{
  int f = (int)totalEnvelopeTax$;
  int g = (int)totalPurchase$;
  int h = (int)totalPaid$;
-  
-   
-// print out Total cost of each kind of item; sales tax for that total cost
-System.out.println("The total cost of socks is "+(100*a/100.0)+" and the sales tax for total socks is "+(100*b/100.0)+ "  .");
-System.out.println("The total cost of glasses is "+(100*c/100.0)+" and the sales tax for total glasses is "+(100*d/100.0)+ " .");
-System.out.println("The total cost of envelopes is "+(100*e/100.0)+" and the sales tax for total envelopes is "+(100*f/100.0)+ " .");
+
+System.out.println("They bought three items, as socks, drinking glasses, and envelopes.");
+// print out Total cost of each kind of item; sales tax for that total cost  
+System.out.println("The number of pairs of socks is 3 and the cost per pair is $2.58 .");
+System.out.println("The total cost (before tax) of socks is $"+(a/100.0)+" and the sales tax for total socks is $"+(b/100.0)+ "  .");
+// glasses
+System.out.println("the number of drinking glasses is 6 and the cost per glass is $2.29 .");
+System.out.println("The total cost (before tax) of glasses is $"+(c/100.0)+" and the sales tax for total glasses is $"+(d/100.0)+ " .");
+// envelopes
+System.out.println("The number of envelopes is 1 and the cost per envelope is $3.25 .");
+System.out.println("The total cost of (before tax) envelopes is $"+(e/100.0)+" and the sales tax for total envelopes is $"+(f/100.0)+ " .");
  
 // Total cost of purchases (before tax)
-System.out.println("The total purchases before tax is "+(100*g/100.0)+" .");
+System.out.println("The total purchases before tax is $"+(g/100.0)+" .");
 
 // Total actually paid for this transaction, including sales tax. 
 
-System.out.println("Total acually paid for this transaction is "+(100*h/100.0)+" .");
+System.out.println("The total acually paid for this transaction (including sales tax) is $"+(h/100.0)+" .");
 
     }
 }
