@@ -1,7 +1,9 @@
 //Yutong Song 
 // 9/5/2014
-//Arithmetic Java Program
-//
+// Arithmetic Java Program
+// Objectives.  This homework has the objective of giving you practice manipulating data stored in variables, in running simple calculations, and in printing the numerical output that you generated.
+// Task: You go shopping at Walmart’s and want to compute the cost of the items you bought, including the PA sales tax of 6%.  Begin by setting up a class called “Arithmetic” with a main method, as you did in your first homework.
+
 
 // define a class
 public class Arithmetic{
@@ -18,16 +20,16 @@ public class Arithmetic{
     int nEnvelopes=1;           // number of boxes of envelopes
     double envelopeCost$=3.25;  // cost per box of envelopes
     
-    double taxPercent=0.06;
+    double taxPercent=0.06;     // tax percentage
     
-    double totalSockCost$,       // total cost of socks
-    totalGlassCost$,      // total cost of glasses
-    totalEnvelopeCost$,   // total cost of envelopes
-    totalSockTax$,
-    totalGlassTax$,
-    totalEnvelopeTax$,
-    totalPurchase$,
-    totalPaid$;
+    double totalSockCost$,      // total cost of socks
+    totalGlassCost$,            // total cost of glasses
+    totalEnvelopeCost$,         // total cost of envelopes
+    totalSockTax$,              // total tax of socks
+    totalGlassTax$,             // total tax of glasses
+    totalEnvelopeTax$,          // total tax of envelopes
+    totalPurchase$,             // total cost of all three items without tax
+    totalPaid$;                 // total cost including tax
    
     
     // run the calculations
@@ -42,22 +44,26 @@ public class Arithmetic{
    
 
 System.out.println("They bought 3 items, as socks, drinking glasses, and envelopes.");
-// print out Total cost of each kind of item; sales tax for that total cost  
+
+// print out the number of each item and individual cost
 System.out.println("The number of pairs of socks is 3 and the cost per pair is $2.58 .");
-System.out.println("The total cost (before tax) of socks is $"+((int)(totalSockCost$*100)/100.0)+" and the sales tax for total socks is $"+((int)(totalSockTax$*100)/100.0)+ " .");
-// glasses
-System.out.println("the number of drinking glasses is 6 and the cost per glass is $2.29 .");
-System.out.println("The total cost (before tax) of glasses is $"+((int)(totalGlassCost$*100)/100.0)+" and the sales tax for total glasses is $"+((int)(totalGlassTax$*100)/100.0)+ " .");
-// envelopes
+System.out.println("The number of drinking glasses is 6 and the cost per glass is $2.29 .");
 System.out.println("The number of envelopes is 1 and the cost per envelope is $3.25 .");
-System.out.println("The total cost of (before tax) envelopes is $"+((int)(totalEnvelopeCost$*100)/100.0)+" and the sales tax for total envelopes is $"+((int)(totalEnvelopeTax$*100)/100.0)+ " .");
- 
-// Total cost of purchases (before tax)
-System.out.println("The total purchases before tax is $"+((int)(totalPurchase$*100)/100.0)+" .");
 
-// Total actually paid for this transaction, including sales tax. 
-
-System.out.println("The total acually paid for this transaction (including sales tax) is $"+((int)(totalPaid$*100)/100.0)+" .");
+// print out the total cost for each item without tax and their corresponding tax
+System.out.println("The total cost (before tax) of socks is $"+
+                    ((int)(totalSockCost$*100)/100.0)+" and the sales tax for total socks is $"+
+                    ((int)(totalSockTax$*100)/100.0)+ " .");
+System.out.println("The total cost (before tax) of glasses is $"+
+                    ((int)(totalGlassCost$*100)/100.0)+" and the sales tax for total glasses is $"+
+                    ((int)(totalGlassTax$*100)/100.0)+ " .");
+System.out.println("The total cost (before tax) of envelopes is $"+
+                    ((int)(totalEnvelopeCost$*100)/100.0)+" and the sales tax for total envelopes is $"+
+                    ((int)(totalEnvelopeTax$*100)/100.0)+ " .");
+                    
+// print out the total cost of purchases before tax and after tax
+System.out.println("The total cost of purchases before tax is $"+((int)(totalPurchase$*100)/100.0)+" .");
+System.out.println("The total cost for this transaction (including sales tax) is $"+((int)(totalPaid$*100)/100.0)+" .");
 
     }
 }
