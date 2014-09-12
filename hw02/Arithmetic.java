@@ -50,7 +50,7 @@ System.out.println("The number of pairs of socks is 3 and the cost per pair is $
 System.out.println("The number of drinking glasses is 6 and the cost per glass is $2.29 .");
 System.out.println("The number of envelopes is 1 and the cost per envelope is $3.25 .");
 
-// print out the total cost for each item without tax and their corresponding tax
+// print out the total cost for each item without tax and their corresponding taxes
 System.out.println("The total cost (before tax) of socks is $"+
                     ((int)(totalSockCost$*100)/100.0)+" and the sales tax for total socks is $"+
                     ((int)(totalSockTax$*100)/100.0)+ " .");
