@@ -18,6 +18,7 @@ public class Root {
         
         double guess1, guess2, guess3, guess4, guess5, EstimateValue;
         
+        // calculation of guessing four times
         guess1 = numberValue/3;
         guess2 = (guess1*guess1*guess1+numberValue)/(3*guess1*guess1);
         guess3 = (2*guess2*guess2*guess2+numberValue)/(3*guess2*guess2);

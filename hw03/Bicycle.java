@@ -28,9 +28,9 @@ public class Bicycle {
         secondsPerMinute = 60;
         
         // calculation
-        Distance = (int)((nCounts * PI * WheelDiameter / InchesPerMile)*100) / 100.0;
-        Minutes = ((int) (nSeconds / secondsPerMinute) * 10 ) / 10.0;
-        AverageMph = (int)(((nCounts * PI * WheelDiameter / InchesPerMile) / Minutes) * 60 * 100) / 100.0;
+        Distance = (int)((nCounts * PI * WheelDiameter / InchesPerMile)*100) / 100.0;                       // total distance the bicycle travels
+        Minutes = ((int) (nSeconds / secondsPerMinute) * 10 ) / 10.0;                                       // total seconds
+        AverageMph = (int)(((nCounts * PI * WheelDiameter / InchesPerMile) / Minutes) * 60 * 100) / 100.0;  // mph
         
         
         System.out.println(" The distance was " + Distance + " miles and took " + Minutes + "."  );
