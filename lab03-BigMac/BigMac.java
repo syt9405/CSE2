@@ -5,20 +5,21 @@
 // Write a program that computes the cost of buying a some Big Macs.  It uses the Scanner class to obtain from the user how many Big Macs, the cost per Big Mac, and the percentage tax (which depends on the state; 6% in PA, 8% in MA, etc). It then displays the total cost.
 
 
-import java.util.Scanner;
+import java.util.Scanner; //
 
 // define a class
 public class BigMac {
     // add main method	
      public static void main(String[] args) {
-         Scanner myScanner;
-         myScanner = new Scanner( System.in );
+         
+         Scanner myScanner = new Scanner( System.in ); //myScanner is only a variable. it's ok to rename it. 
+         
          System.out.print(" Enter the number of Big Macs(an integer > 0): ");
          int nBigMacs = myScanner.nextInt();
          System.out.print(" Enter the cost per Big Mac as"+ " a double (in the form xx.xx): ");
          double bigMac$ = myScanner.nextDouble();
 	     System.out.print(" Enter the percent tax as a whole number (xx): ");
-         double taxRate = myScanner.nextDouble();
+         int taxRate = myScanner.nextInt();
          taxRate/=100; 
   
          double cost$;
