@@ -17,7 +17,7 @@ public class Month {
         if (myScanner.hasNextInt()){                                                                                                                    // if the input is an int
             int nMonth = myScanner.nextInt();
             
-                  if (nMonth >= 1 && nMonth < 12){                                                                                                      // if the input is inside the range
+                    if (nMonth >= 1 && nMonth < 12){                                                                                                      // if the input is inside the range
                   
                          if (nMonth == 2){                                                                                                              // since February is special, I checked this option first
                                 System.out.print("Enter an int giving the year ");
@@ -26,14 +26,29 @@ public class Month {
                                     int nYear = myScanner.nextInt();
                                     
                                     if (nYear > 0){                                                                                                     // if the input value is positive
-                                        int nRemainder = nYear % 4;
+                                        int nRemainder1 = nYear % 100;
                                         
-                                        if (nRemainder == 0){                                                                                           // if the year is divisible by 4, then February has 29 days
-                                            System.out.println("The month has 29 days.");
+                                        if (nRemainder1 == 0){                                                                                           // if the year is divisible by 4, then February has 29 days
+                                           int nNewRemainder = (nYear/100) % 4;
+                                           
+                                                if(nNewRemainder == 0){
+                                                   System.out.println("The month has 29 days.");
+                                                }
+                                                 else {
+                                                   System.out.println("The month has 28 days.");
+                                                   return;
+                                                }
                                         }
                                         else {                                                                                                          // otherwise, there are 28 days inside February
-                                            System.out.println("The month has 28 days.");
-                                            return;
+                                                int nRemainder2 = nYear % 4;
+                                                if (nRemainder2 == 0){
+                                                    System.out.println("The month has 29 days.");
+                                                }
+                                                else {
+                                                    System.out.println("The month has 28 days.");
+                                                    return;
+                                                }
+                                         return;
                                         }
                                     }
                                     else {                                                                                                              // if the input value for year is not positive
@@ -46,18 +61,18 @@ public class Month {
                                     return;
                                 }    
                             }
-                          else if (nMonth == 1 || nMonth == 3 || nMonth == 5 || nMonth == 7 || nMonth == 8 || nMonth == 10 || nMonth == 12){            // listing months with 31 days
+                            else if (nMonth == 1 || nMonth == 3 || nMonth == 5 || nMonth == 7 || nMonth == 8 || nMonth == 10 || nMonth == 12){            // listing months with 31 days
                                 System.out.println("The month has 31 days.");
-                          }
-                          else {
+                            }
+                            else {
                                 System.out.println("The month has 30 days.");                                                                           // other than months with 31 days and February, the rest months have 30 days 
                                 return;
-                          }
-                  }
-                  else {                                                                                                                                // if the input value for month is not inside the range
+                            }
+                    }
+                    else {                                                                                                                                // if the input value for month is not inside the range
                      System.out.println("You did not enter an int between 1 and 12." );
                      return;
-                  }
+                    }
         }
         else {                                                                                                                                          // if the input value for month is not an int
             System.out.println("You did not enter an int");
