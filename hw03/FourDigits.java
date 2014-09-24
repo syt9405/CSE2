@@ -15,10 +15,10 @@ public class FourDigits {
         System.out.print("Enter a double and I display the four digits to the right of the decimal point- ");
         double nValue = myScanner.nextDouble();
         
-        int a = (int) (nValue*10%10);      // the first digit after the decimal point
-        int b = (int) (nValue*100%10);     // the second digit after the decimal point
-        int c = (int) (nValue*1000%10);    // the third digit after the decimal point
-        int d = (int) (nValue*10000%10);   // the fourth digit after the decimal point
+        int a = (int) (nValue*10)%10;      // the first digit after the decimal point
+        int b = (int) (nValue*100)%10;     // the second digit after the decimal point
+        int c = (int) (nValue*1000)%10;    // the third digit after the decimal point
+        int d = (int) (nValue*10000)%10;   // the fourth digit after the decimal point
         
       System.out.println("The four digits are " + a + b + c + d);
         
