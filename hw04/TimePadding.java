@@ -18,13 +18,13 @@ public class TimePadding {
         int nMinutes = (int) ((nSeconds - (nHours*3600))/60);                                                  // calculate how many minutes can the rest seconds convert to
         int nNewSeconds = (int)(nSeconds - (nMinutes*60) - (nHours*3600));                                     // calculate the rest seconds
         
-        if (nMinutes < 9 || nNewSeconds < 9) {                                                                 // all processes below are to adjust the final output into the given format
+        if (nMinutes < 9 && nNewSeconds < 9) {                                                                 // all processes below are to adjust the final output into the given format
             System.out.println("The time is   " + nHours + ":0" + nMinutes + ":0" + nNewSeconds + "  .");
         }
-        else if (nMinutes < 9 || nNewSeconds >= 9){
+        else if (nMinutes < 9 && nNewSeconds >= 9){
             System.out.println("The time is   " + nHours + ":0" + nMinutes + ":" + nNewSeconds + "  .");
         }
-        else if (nMinutes >= 9 || nNewSeconds < 9){
+        else if (nMinutes >= 9 && nNewSeconds < 9){
             System.out.println("The time is   " + nHours + ":" + nMinutes + ":0" + nNewSeconds + "  .");
         }
         else {
