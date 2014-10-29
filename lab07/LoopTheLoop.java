@@ -3,8 +3,8 @@ public class LoopTheLoop{
   public static void main(String[]args){
     
     Scanner scan = new Scanner(System.in);
-    boolean run = true;
-    String wRepeat = "";
+    //boolean run = true;
+    //String wRepeat = "";
     while(true){
       System.out.println("Enter an int between 1 and 15 ");
       if(scan.hasNextInt()){
@@ -39,7 +39,7 @@ public class LoopTheLoop{
       }
       
       System.out.println("Enter y or Y to go again- ");
-      wRepeat = scan.next();
+      String wRepeat = scan.next();
       if (!wRepeat.equals ("y") && !wRepeat.equals ("Y")){    
         break;  
       }   

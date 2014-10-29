@@ -1,3 +1,5 @@
+//Yutong Song
+//CSE002
 //objective: You should use loops to create each of the three stacks of number. The first stack should be created only using for loops. The second stack should be created only using while loops. The third stack should be created only using do-while loops. Start by writing a program that prints the first stack and get it running. Then it is straightforward to modify a copy of that code (which uses for loops) to write code that uses only while loops. Once you have code that generates the top two stacks you can easily modify the code to generate the third diamond that only uses do-while loops.
 //10/19/2014
 
