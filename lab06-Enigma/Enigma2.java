@@ -1,12 +1,14 @@
+import java.util.Scanner;
 public class Enigma2{
-  public static void main(String [] args){
-    int n=40;
-  
+  public static void main(String [] arg){
+    int n=40,k=60;
+    String out="";
     switch(n){
-      case 13: n+=13;
-      case 40: n+=40;
+      case 12: 
+      case 13: out+=13;
+      case 40: out+=40;
     }
-    System.out.println(n);
+    System.out.println(out);
   }
 }
 
@@ -19,4 +21,3 @@ public class Enigma2{
  * 
  * 
  */
-

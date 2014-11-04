@@ -14,16 +14,26 @@ public class NumberStack{
         System.out.println("Using for loops:");      
         for(int n=0; n<=input; n++){                 //control how many blocks repeating
             for(int i=0; i<n; i++){                  //control how many lines repeating
-                for (int j=0; j<n; j++){             //control how many times number repeating
+                for(int k=(input-n); k!=0; k--){
+                    System.out.print(" ");
+                }
+                for(int j=0; j<(2*n-1); j++){             //control how many times number repeating
                     System.out.print(n);
                 }
-                System.out.println();
+            System.out.println();
             }
-            for(int a=0; a<n; a++){                  //control how many dashes in a line
+          
+          
+            for(int k=(input-n); k!=0; k--){
+            System.out.print(" ");
+            }
+            for(int a=0; a<(2*n-1); a++){                  //control how many dashes in a line
             System.out.print("-");
             }
             System.out.println();
-        }    
+        }
+            
+        
         
         
         System.out.println("Using while loops:");
@@ -31,16 +41,27 @@ public class NumberStack{
         while (n<=input){                            // control how many blocks repeating
             int i=0;
             while (i<n){                             //control how many lines repeating
+                int k=input-n;
+                while(k!=0){
+                    System.out.print(" ");
+                    k--;
+                }
                 int j=0;
-                while (j<n){                         //control how many numbers in a line repeating 
+                while (j<(2*n-1)){                         //control how many numbers in a line repeating 
                     System.out.print(n);
                     j++;
                 }
                 System.out.println();
                 i++;
             }
+            
+            int k=input-n;
+            while(k!=0){
+                System.out.print(" ");
+                k--;
+            }
             int a=0;                                 //control how many dashes in a line at the end
-            while (a<n){
+            while (a<(2*n-1)){
                 System.out.print("-");
                 a++;
             }
@@ -56,15 +77,25 @@ public class NumberStack{
             int i=0;
             while (i<n){                             //control how many lines repeating
                 int j=0;
-                while (j<n){                         //control how many numbers in a line repeating 
+                int k=input-n;
+                while(k!=0){
+                    System.out.print(" ");
+                    k--;
+                }
+                while (j<(2*n-1)){                         //control how many numbers in a line repeating 
                     System.out.print(n);
                     j++;
                 }
                 System.out.println();
                 i++;
             }
+            int k=input-n;
+            while(k!=0){
+                System.out.print(" ");
+                k--;
+            }
             int a=0;                                 //control how many dashes in a line at the end
-            while (a<n){
+            while (a<(2*n-1)){
                 System.out.print("-");
                 a++;
             }

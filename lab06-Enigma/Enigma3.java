@@ -6,7 +6,7 @@
 
 import java.util.Scanner;
 public class Enigma3{
-  public static void main(String [] args){
+  public static void main(String [] arg){
     int n=40,k=60;
     String out="";
     switch(k%14){
@@ -45,8 +45,14 @@ public class Enigma3{
         n-=3;
         k-=5;
     }
+    if(n!=0 && k!=0){
      out+=1/n + 1/k;   
     System.out.println(out);
+    }
+    else{
+      System.out.println(out);
+      return;
+    }
   }
 }
 

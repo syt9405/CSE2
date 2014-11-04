@@ -1,3 +1,5 @@
+// Yutong Song
+// lab06
 /*Sample of expected output:
  *   Enter an int- 9
  *   You entered 9
@@ -5,20 +7,27 @@
  *   Again, you entered 9
  */
 
+
+
 import java.util.Scanner;
 public class Enigma0{
-  public static void main(String[]args){
-    Scanner scan = new Scanner(System.in);
+  public static void main(String arg []){
     System.out.print("Enter an int- ");
-    
+    Scanner scan=new Scanner(System.in);
     if(scan.hasNextInt()){
       int n=scan.nextInt();
       System.out.println("You entered "+n);
-      System.out.println("sum is 25");
-      System.out.println("Again, you entered "+n);
+          int k=4,p=6,q=7,r=8;
+            switch(k+p+q+r){
+              case 24: 
+              case 25: System.out.println("sum is 25");
+              default:
+                  System.out.println("To repeat, you entered "+n);
+            }    
     }
     else{
-      System.out.println("Enter an int- ");
+      int n=4;
+      System.out.println("You entered "+n);
     }
     
     
@@ -28,8 +37,5 @@ public class Enigma0{
 /* Error report:
  *   Expand this comment:
  *   Explain the error(s) that occurred here, and then fix them
- *
- * In the original code, there is a useless switch statement. I deleted it and replaced it with a direct printout statement. 
- *
  */
 
