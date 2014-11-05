@@ -44,7 +44,7 @@ public class BurgerKing {
                     
                     else{                                                                                                                                  // if the user types in more than one letter
                         System.out.println("a single character expected");
-                        return;
+                        //return;
                     }
                 break;
                 case 's':                                                                                                                                  // if the user chose Soda option from the first question, then he has another three choices

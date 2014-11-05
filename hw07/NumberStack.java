@@ -12,7 +12,7 @@ public class NumberStack{
         int input = scan.nextInt();
         
         System.out.println("Using for loops:");      
-        for(int n=0; n<=input; n++){                 //control how many blocks repeating
+        for(int n=1; n<=input; n++){                 //control how many blocks repeating
             for(int i=0; i<n; i++){                  //control how many lines repeating
                 for(int k=(input-n); k!=0; k--){
                     System.out.print(" ");
@@ -22,15 +22,13 @@ public class NumberStack{
                 }
             System.out.println();
             }
-          
-          
             for(int k=(input-n); k!=0; k--){
-            System.out.print(" ");
+                System.out.print(" ");
             }
             for(int a=0; a<(2*n-1); a++){                  //control how many dashes in a line
-            System.out.print("-");
+                System.out.print("-");
             }
-            System.out.println();
+        System.out.println();
         }
             
         
@@ -109,3 +107,49 @@ public class NumberStack{
 }   
 }
 
+
+// line 132 causes error
+/*
+import java.util.Scanner;
+public class exam2b{
+   public static void main(String [] args){
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a number between 1 and 9- ");
+        String n = scan.next();
+        while(true){
+            if(!scan.hasNextInt()){
+                System.out.print("Enter a number between 1 and 9- ");
+                n = scan.next();
+            }
+            else{
+            if (scan.nextInt() > 9 || scan.nextInt() < 1){
+                System.out.print("Enter a number between 1 and 9- ");
+                n = scan.next();
+            }
+                n = scan.nextInt();
+            }
+        }    
+
+        int i,j,k,x,y,z;
+        for(i=1; i<=n; i++){
+            for (k=0; k<i; k++){
+                for (y=0; y<(n - i); y++){
+                    System.out.print(" ");
+                }
+                for (j=0; j<(2*i-1); j++){
+                    System.out.print(i);
+                }
+            System.out.print("\n");    
+            }
+            for (z=0; z<(n-i); z++){
+                System.out.print(" ");
+            }
+            for (x=0; x<(2*i-1); x++){
+                System.out.print("-");
+            }
+        System.out.print("\n");
+        }
+    }
+}
+
+*/

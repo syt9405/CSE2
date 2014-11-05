@@ -25,7 +25,7 @@ allBlocks(m);
 // check whether the input is acceptible
 public static int getInt(){
     int a;
-    System.out.print("Enter an in int between 1 and 9, inclusive: ");
+    System.out.print("Enter an int between 1 and 9, inclusive: ");
     a=checkRange(checkInt());
     return a;
 }
@@ -43,7 +43,7 @@ public static int checkInt(){                                  // check the inpu
     }
     intValue = scan.nextInt();
     }
-    return intValue;                                            // return intValue
+    return intValue;
 }
 
 public static int checkRange(int x){                            //check if hte input is in the range of 1 to 9

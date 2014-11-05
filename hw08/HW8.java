@@ -27,7 +27,7 @@ public class HW8{
       String input = scan.next();
       while(true){
       if (input.length()==1){                                                   // check whether the input has only one character
-        if (input.charAt(0) == s.charAt(0)|| input.charAt(0) == s.charAt(1)){   // match input with given condition
+        if (input.charAt(0) == s.charAt(0) || input.charAt(0) == s.charAt(1)){   // match input with given condition
           return input.charAt(0);                                               // define the new value of input
         }
         else{                                                                   // if the input contains a different character than the given condition
