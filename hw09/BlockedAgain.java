@@ -48,14 +48,14 @@ public static int checkInt(){                                  // check the inpu
 
 public static int checkRange(int x){                            //check if hte input is in the range of 1 to 9
     Scanner scan = new Scanner(System.in);
-    int value=x;
+    int value = x;
     if(value>=1 && value<=9){                                   //if the input is valid, return value
        return value;
     }
     else{                                                       //if the input is not inside the range, enter the while loop to ask new inputs until getting a valid input
-       while(value<1 || value>9){
-       System.out.print("You did not enter an int in [1,9]; try again: ");
-       value = scan.nextInt();
+        while(value<1 || value>9){
+            System.out.print("You did not enter an int in [1,9]; try again: ");
+            value = scan.nextInt();
         }
     }
     return value;                                               // return value
@@ -82,20 +82,18 @@ public static void block(int n, int m){
         }
         System.out.println();
     }
-    
 }    
    
    
 public static void line(int n, int m){
     for(int k=(m-n); k!=0; k--){                      //control how many spaces before printing out dashes
         System.out.print(" ");
-            }
-            for(int a=0; a<(2*n-1); a++){             //control how many dashes in a line
-            System.out.print("-");
-            }
-            System.out.println();
+    }
+    for(int a=0; a<(2*n-1); a++){             //control how many dashes in a line
+        System.out.print("-");
+    }
+    System.out.println();
   }  
-    
 }
 
 

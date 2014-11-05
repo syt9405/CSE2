@@ -3,20 +3,27 @@ public class exam2b{
    public static void main(String [] args){
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a number between 1 and 9- ");
-        String n = scan.next(); 
-        
-        while(true){
-            if(!scan.hasNextInt()){
-                System.out.print("Enter a number between 1 and 9- ");
-                n = scan.next();
+        int n=0;
+
+            if(scan.hasNextInt()){
+                n = scan.nextInt();
+                if (n <= 9 && n >=1){
+                    n = scan.nextInt();
+                }
+                else{
+                    while(n > 9 || n < 1){
+                        System.out.print("Enter a number between 1 and 9- ");   
+                        scan.next();
+                    }    
+                }
             }
             else{
-            if (scan.nextInt() > 9 || scan.nextInt() < 1){
+                while(!scan.hasNextInt()){
                 System.out.print("Enter a number between 1 and 9- ");
-                n = scan.next();
+                scan.next();
+                }
             }
-                n = scan.nextInt();
-            }
+            n = scan.nextInt();
         }
 
         int i,j,k,x,y,z;
