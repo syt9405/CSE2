@@ -6,6 +6,7 @@ public class Enigma2{
     switch(n){
       case 12: 
       case 13: out+=13;
+      //case 40: out+=40/0;   it is a run time error since the demonimator cannot be zero
       case 40: out+=40;
     }
     System.out.println(out);

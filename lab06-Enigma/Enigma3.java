@@ -45,6 +45,9 @@ public class Enigma3{
         n-=3;
         k-=5;
     }
+    
+    // the original code forgot check whether the input is zero. so I added a 
+    //if-else statement to check.
     if(n!=0 && k!=0){
      out+=1/n + 1/k;   
     System.out.println(out);

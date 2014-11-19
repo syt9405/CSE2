@@ -34,11 +34,11 @@ public static void showHands(){
                 nRanks = (int)(x % 13);                                         // range is from 0-12, total 13 types
                 suits[i] = nSuits;                                              // let array suits[i] map to each nSuits value
          
-            if(nRanks == 1){ rank[i] = " A";}                                    // if the random rank is 1, then it appear "A" in the array
-            else if (nRanks == 11){rank[i] = " J";}                              // if the random rank is 11, then it appear "J" in the array
-            else if (nRanks == 12){rank[i] = " Q";}                              // if the random rank is 12, then it appear "Q" in the array
-            else if (nRanks == 13){rank[i] = " K";}                              // if the random rank is 13, then it appear "K" in the array
-            else{rank[i] = " "+nRanks;}                                          // otherwise, rank[i] equals to the number itself
+            if(nRanks == 1){ rank[i] = " A";}                                   // if the random rank is 1, then it appear "A" in the array
+            else if (nRanks == 11){rank[i] = " J";}                             // if the random rank is 11, then it appear "J" in the array
+            else if (nRanks == 12){rank[i] = " Q";}                             // if the random rank is 12, then it appear "Q" in the array
+            else if (nRanks == 13){rank[i] = " K";}                             // if the random rank is 13, then it appear "K" in the array
+            else{rank[i] = " "+nRanks;}                                         // otherwise, rank[i] equals to the number itself
         }
         
         for(int i=0; i<5; i++){                                                 // pairing outcomes based on suits
@@ -70,29 +70,27 @@ public static void simulateOdds(){
     int a = 0;
     int dup = 0;
     String [] list = {" A", " K", " Q", " J", "10", " 9", " 8", " 7", " 6", " 5", " 4", " 3", " 2"};
-
-    
     int [] rank = new int [5];
     
-    for(int n=0; n<10000; n++){
-        for(int i=0; i<5; i++){
+    for(int n=0; n<10000; n++){                                                 // repeat the loop 10000 times 
+        for(int i=0; i<5; i++){                                                 // get a random hand of five cards
             int x = (int)(Math.random() * 52);
             nRanks = (int)(x % 13);        
-            rank[i] = nRanks;
+            rank[i] = nRanks;                                                   // save them in a array called reank[i]
         }    
-        if(exactlyOneDup(rank)){
+        if(exactlyOneDup(rank)){                                                // calling a new method to find whether there are exactly one pair  
             for(int i=0; i<5; i++){
                 for(int j=(i + 1); j<5; j++){
                     while(rank[i] == rank[j] ){
-                        dup = rank[i];
+                        dup = rank[i];                                          // find out the value which has exactly two repeats
                         break;
                     }
                 }
             }
-        onePair[dup] +=1;
+        onePair[dup] +=1;                                                       // sum the number of exactly two repeats in one hand and group them by ranks
         }
         else{
-            nOnePair++;
+            nOnePair++;                                                         // sum the number of "total not exactly one pair"
         }
     }
 
@@ -105,7 +103,7 @@ public static void simulateOdds(){
 }
 
 
-public static boolean exactlyOneDup(int [] num){
+public static boolean exactlyOneDup(int [] num){                                // the new method that check whether there is exactly one pair in a hand
     boolean x;
     int a=0;
     for(int i=0; i<5; i++){ 

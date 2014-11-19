@@ -35,7 +35,7 @@ public class NumberStack{
         
         
         System.out.println("Using while loops:");
-        int n=0;
+        int n=1;
         while (n<=input){                            // control how many blocks repeating
             int i=0;
             while (i<n){                             //control how many lines repeating
@@ -70,33 +70,33 @@ public class NumberStack{
         
         
         System.out.println("Using do-while loops:");
-        n=0;
+        n=1;
         do{   
             int i=0;
-            while (i<n){                             //control how many lines repeating
-                int j=0;
-                int k=input-n;
-                while(k!=0){
+            do{                                             //control how many lines repeating
+                int k=(input-n);
+                do{
                     System.out.print(" ");
                     k--;
-                }
-                while (j<(2*n-1)){                         //control how many numbers in a line repeating 
+                }while(k!=0);
+                int j=0;
+                do{                                         //control how many numbers in a line repeating 
                     System.out.print(n);
                     j++;
-                }
+                }while (j<(2*n-1));
                 System.out.println();
                 i++;
-            }
+            }while (i<n);
             int k=input-n;
-            while(k!=0){
+            do{
                 System.out.print(" ");
                 k--;
-            }
+            }while(k!=0);
             int a=0;                                 //control how many dashes in a line at the end
-            while (a<(2*n-1)){
+            do{
                 System.out.print("-");
                 a++;
-            }
+            }while (a<(2*n-1));
             System.out.println();
             n++;
         } while(n<=input);                           //control how many repeating blocks
@@ -115,21 +115,30 @@ public class exam2b{
    public static void main(String [] args){
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a number between 1 and 9- ");
-        String n = scan.next();
-        while(true){
-            if(!scan.hasNextInt()){
-                System.out.print("Enter a number between 1 and 9- ");
-                n = scan.next();
+        int n=0;
+
+            if(scan.hasNextInt()){
+                n = scan.nextInt();
+                if (n <= 9 && n >=1){
+                    n = scan.nextInt();
+                }
+                else{
+                    while(n > 9 || n < 1){
+                        System.out.print("Enter a number between 1 and 9- ");   
+                        scan.next();
+                    }    
+                }
             }
             else{
-            if (scan.nextInt() > 9 || scan.nextInt() < 1){
+                while(!scan.hasNextInt()){
                 System.out.print("Enter a number between 1 and 9- ");
-                n = scan.next();
+                scan.next();
+                }
+            n = scan.nextInt();    
             }
-                n = scan.nextInt();
-            }
-        }    
-
+        }
+        
+        
         int i,j,k,x,y,z;
         for(i=1; i<=n; i++){
             for (k=0; k<i; k++){
