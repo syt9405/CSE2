@@ -20,54 +20,69 @@ public class PokerOdds{
   }
 
 
-public static void showHands(){    
-    String input;
-    do{
-    int nSuits = 0, nRanks = 0;
-
-        String hands[] = {"", "", "",""};                                       // initialized three new arrays
-        String rank[] = {"", "", "", "", ""};
-        int suits[] = new int [5];
-        for(int i=0; i<5; i++){                                                 // random out 5 hands 
-            int x = (int)(Math.random() * 51);
-                nSuits = (int)(x / 13);                                         // range is from 0-3. total 4 types
-                nRanks = (int)(x % 13);                                         // range is from 0-12, total 13 types
-                suits[i] = nSuits;                                              // let array suits[i] map to each nSuits value
-         
-            if(nRanks == 1){ rank[i] = " A";}                                   // if the random rank is 1, then it appear "A" in the array
-            else if (nRanks == 11){rank[i] = " J";}                             // if the random rank is 11, then it appear "J" in the array
-            else if (nRanks == 12){rank[i] = " Q";}                             // if the random rank is 12, then it appear "Q" in the array
-            else if (nRanks == 13){rank[i] = " K";}                             // if the random rank is 13, then it appear "K" in the array
-            else{rank[i] = " "+nRanks;}                                         // otherwise, rank[i] equals to the number itself
+public static void showHands(){
+String input;
+do{
+    String [] out = {"", "", "", "", ""};
+    String [] rankArray = {"", "", "", "","" };
+    int [] suitArray = new int [5];
+    int rank = 0, suit = 0, x=0;
+    
+    for(int i=0; i<5; i++){
+        x = (int)(Math.random()*52);
+        rank = (x % 13);
+        if (rank == 0){
+        rankArray[i] = "A";
         }
-        
-        for(int i=0; i<5; i++){                                                 // pairing outcomes based on suits
-            if(suits[i] == 0){ hands[0] += rank[i];}            
-            else if(suits[i] == 1){hands[1] += rank[i];}
-            else {hands[3] += rank[i];}
+        else if(rank == 10){
+        rankArray[i] = "J";
         }
-        
-        hands[0] = "Clubs: " + hands[0];                                        // redefining the value of array hands[i]
-        hands[1] = "Diamonds: " + hands[1];
-        hands[2] = "Hearts: " + hands[2];
-        hands[3] = "Spades: " + hands[3];
-        
-        for (int i=0; i<4; i++){ System.out.println(hands[i]);}                 // print out hands[i] value
-        
-        System.out.println("");
-        System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");// ask user to run again or not
-        Scanner scan = new Scanner(System.in);
-        input = scan.next();
-
-    }while(input.equalsIgnoreCase("y"));                                        // if the input is y or Y, then the program repeats
-}        
+        else if(rank == 11){
+        rankArray[i] = "Q";
+        }
+        else if(rank == 12){
+        rankArray[i] = "K";
+        }
+        else{
+        rankArray[i] = rank + "";
+        }
+        suit = (x / 13);
+        suitArray[i] = suit;
+    }
+    
+    for(int i=0; i<5; i++){
+        if( suitArray[i] == 0){
+            out[0] += rankArray[i] + " ";
+        }
+        else if( suitArray[i] == 1){
+            out[1] += rankArray[i] + " ";
+        }
+        else if( suitArray[i] == 2){
+            out[2] += rankArray[i] + " ";
+        }
+        else{
+            out[3] += rankArray[i] + " ";
+        }
+    }
+    
+    System.out.println("diamond: " + out[0] );
+    System.out.println("clubs: " + out[1] );
+    System.out.println("spades: " + out[2] );
+    System.out.println("hearts: " + out[3] );
+    
+    
+    System.out.println("Go again? Enter 'y' or 'Y', anything else to quit- ");
+    Scanner scan = new Scanner(System.in);
+    input = scan.next();
+    
+    }while(input.equals("Y") || input.equals("y"));
+}
         
        
 public static void simulateOdds(){
     int nRanks = 0;
-    int [] onePair = new int [10000];
+    int [] onePair = new int [13];
     int nOnePair = 0;
-    int a = 0;
     int dup = 0;
     String [] list = {" A", " K", " Q", " J", "10", " 9", " 8", " 7", " 6", " 5", " 4", " 3", " 2"};
     int [] rank = new int [5];
@@ -110,9 +125,6 @@ public static boolean exactlyOneDup(int [] num){                                
         for(int j=1+i; j<5; j++){
             if (num[i] == num[j]){
                 a++;
-            }
-            else{
-                a=a;
             }
         }
     }

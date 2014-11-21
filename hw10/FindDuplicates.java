@@ -52,45 +52,34 @@ System.out.print("Go again? Enter 'y' or 'Y', anything else to quit- ");
     return out;
   }
   
-    public static boolean hasDups(int [] num){
-    boolean x;
-    int a=0;
-    for(int i=0; i<10; i++){ 
-        for(int j=i+1; j<10; j++){
-            if (num[i] == num[j]){
-                a++;
-            }
-            else{
-                a=a;
-            }
-        }
-    }
-    if(a>0){
-        x = true;
-    }
-    else{
-        x = false;
-    }
-    return x;
+     public static boolean hasDups(int [] x){                                   // return a boolean statement
+      boolean a;
+      for(int i = 0; i<10; i++){                       
+          for(int j=(i + 1); j<10; j++){
+              if( x[i] == x[j] ){                                               // check the array elements one by one. 
+                  a = true;                                                     // if there are elements with same value
+                  return a;                                                     // then return true. otherwise, return false
+              }
+          }
+      }
+      a = false;
+      return a;
   }
   
-  public static boolean exactlyOneDup(int [] num){
+  public static boolean exactlyOneDup(int [] num){                              // return a boolean statement on whether the array only contains one duplicate
     boolean x;
     int a=0;
-    for(int i=0; i<10; i++){ 
+    for(int i=0; i<10; i++){                                                    // sum up the total number of elements that ahve same values
         for(int j=1+i; j<10; j++){
-            if (num[i] == num[j]){
+            if (num[i] == num[j]){                               
                 a++;
-            }
-            else{
-                a=a;
             }
         }
     }
-    if(a == 1){
+    if(a == 1){                                                                 // if the sum equals to 1, then return true
         x = true;
     }
-    else{
+    else{                                                                       // otherwise, return false
         x = false;
     }
     return x;      
