@@ -10,7 +10,6 @@ the main method provided below and do not change it, then write the methods
 showOneHand() and simulateOdds().*/
 
 
-
 import java.util.Random;
 import java.util.Scanner;
 public class PokerOdds{
