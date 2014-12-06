@@ -15,15 +15,15 @@ public class MatrixSorter{
    }
 
 
-    public static int [][][] buildMat3d(){         
+    public static int [][][] buildMat3d(){                                      // recall method to build a triangle array
         int [][][] triangleArray = new int [3][][];
             
-            for (int i=0; i<3; i++){
+            for (int i=0; i<3; i++){                                            // three slabs total
                 triangleArray[i] = new int [(i*2)+3][];
-                for(int j=0; j<((i * 2)+ 3); j++){
+                for(int j=0; j<((i * 2)+ 3); j++){                              // number of rows
                     triangleArray[i][j] = new int [i+j+1];
-                    for(int k=0; k<(i + j + 1); k++){
-                        triangleArray[i][j][k] = (int)(Math.random()*99+1);
+                    for(int k=0; k<(i + j + 1); k++){                           // number of columns
+                        triangleArray[i][j][k] = (int)(Math.random()*99+1);     // give each space a random integer 1-99
                     }    
                 }
             }
@@ -32,27 +32,27 @@ public class MatrixSorter{
     
     
     public static void show(int [][][] triangleArray){
-            for (int i=0; i<triangleArray.length; i++){
-                System.out.println("---------------------------Slab " + (i + 1));
-                for(int j=0; j<triangleArray[i].length; j++){
-                    for(int k=0; k<triangleArray[i][j].length; k++){
-                        System.out.print(triangleArray[i][j][k] + " ");
-                    }
-                System.out.println("");
+        for (int i=0; i<triangleArray.length; i++){                             // number of blocks
+            System.out.println("---------------------------Slab " + (i + 1));
+            for(int j=0; j<triangleArray[i].length; j++){                       // number of rows
+                for(int k=0; k<triangleArray[i][j].length; k++){                // number of columns
+                    System.out.print(triangleArray[i][j][k] + " ");
                 }
+            System.out.println("");
             }
+        }
         System.out.println("-------------------------");
     }
     
     
     public static int findMin (int [][][] triangleArray){
-        int tempMin = triangleArray[0][0][0];
+        int tempMin = triangleArray[0][0][0];                                   // store triangleArray[0][0][0] to a temperary int
         
             for (int i=0; i<3; i++){
                 for(int j=0; j<(i * 2 + 3); j++){
                     for(int k=0; k<(i + j + 1); k++){
                         if(triangleArray[i][j][k] < tempMin){
-                            tempMin = triangleArray[i][j][k];
+                            tempMin = triangleArray[i][j][k];                   // find the smallest value
                         }
                     }    
                 }
@@ -60,8 +60,8 @@ public class MatrixSorter{
         return tempMin;
     }
     
-    public static int [][] sort (int [][] triangleArray){
-        for (int l=0; l<triangleArray.length; l++){
+    public static int [][] sort (int [][] triangleArray){   
+        for (int l=0; l<triangleArray.length; l++){                             // using selective sort to sort each row
             for (int i=0; i<triangleArray[l].length-1; i++){
                 int currentMin = triangleArray[l][i];
                 int currentMinIndex = i;
@@ -78,7 +78,7 @@ public class MatrixSorter{
             }
         }
 
-        for (int i=1; i< triangleArray.length; i++){
+        for (int i=1; i< triangleArray.length; i++){                            // using insertive sort to sort columns of slab 3
             int currentMin[] = triangleArray[i];
             int j;
             for (j= i - 1; j >= 0 && triangleArray[j][0] > currentMin[0]; j--){
