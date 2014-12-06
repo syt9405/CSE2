@@ -19,16 +19,11 @@ public class MatrixSorter{
         int [][][] triangleArray = new int [3][][];
             
             for (int i=0; i<3; i++){
+                triangleArray[i] = new int [(i*2)+3][];
                 for(int j=0; j<((i * 2)+ 3); j++){
+                    triangleArray[i][j] = new int [i+j+1];
                     for(int k=0; k<(i + j + 1); k++){
-                        triangleArray[i] = new int [(i * 2)+ 3][i + j + 1];
-                    }    
-                }
-            }
-            for (int i=0; i<3; i++){
-                for(int j=0; j<((i * 2)+ 3); j++){
-                    for(int k=0; k<(i + j + 1); k++){
-                        triangleArray[i][j][k] =(int)(Math.random() * 99 + 1);
+                        triangleArray[i][j][k] = (int)(Math.random()*99+1);
                     }    
                 }
             }
@@ -37,10 +32,10 @@ public class MatrixSorter{
     
     
     public static void show(int [][][] triangleArray){
-            for (int i=0; i<3; i++){
+            for (int i=0; i<triangleArray.length; i++){
                 System.out.println("---------------------------Slab " + (i + 1));
-                for(int j=0; j<((i * 2)+ 3); j++){
-                    for(int k=0; k<(i + j + 1); k++){
+                for(int j=0; j<triangleArray[i].length; j++){
+                    for(int k=0; k<triangleArray[i][j].length; k++){
                         System.out.print(triangleArray[i][j][k] + " ");
                     }
                 System.out.println("");
@@ -66,31 +61,22 @@ public class MatrixSorter{
     }
     
     public static int [][] sort (int [][] triangleArray){
-for (int l=0; l<triangleArray.length; l++){
-        for (int i=0; i<triangleArray.length-1; i++)    {
-            int currentMin = triangleArray[l][i];
-            int currentMinIndex = i;
-            
-            for (int j=i+1; j<triangleArray.length; j++)    {
-                if (currentMin > triangleArray[l][j])  {
-                    currentMin = triangleArray[l][j];
-                    currentMinIndex = j;
+        for (int l=0; l<triangleArray.length; l++){
+            for (int i=0; i<triangleArray[l].length-1; i++){
+                int currentMin = triangleArray[l][i];
+                int currentMinIndex = i;
+                for (int j=i+1; j<triangleArray[l].length; j++){
+                    if (currentMin > triangleArray[l][j]){
+                        currentMin = triangleArray[l][j];
+                        currentMinIndex = j;
+                    }
+                }
+                if (currentMinIndex !=i)    {
+                    triangleArray[l][currentMinIndex] = triangleArray [l][i];
+                    triangleArray[l][i] = currentMin;
                 }
             }
-            
-            if (currentMinIndex !=i)    {
-                triangleArray[l][currentMinIndex] = triangleArray [l][i];
-                triangleArray[l][i] = currentMin;
-            }
         }
-}
-        
-for (int i=0;i<triangleArray.length;i++){
-    for (int j=0; j<triangleArray[i].length; j++){
-        System.out.print (triangleArray[i][j] + " ");
-    }
-    System.out.print ("\n");
-}
 
         for (int i=1; i< triangleArray.length; i++){
             int currentMin[] = triangleArray[i];
