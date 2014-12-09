@@ -16,32 +16,27 @@ System.out.println("The array before sorting");
 for (int row = 0; row <5 ; row++) {
     for (int column = 0; column < (row *3 + 5); column++) {
         triangleArray[row][column] = (int)(Math.random()*40);
-    }
-}
-
-for (int row = 0; row <5 ; row++) {
-    for (int column = 0; column < (row *3 + 5); column++) {
         System.out.print(triangleArray[row][column] + " ");
     }
     System.out.println("");
 }
 
+
 for (int row = 0; row < 5; row++){
-    for (int x = 0; x < (row *3 + 5); x++) {
-        for (int y = x + 1; y < (row *3 + 5); y++){
-        if(triangleArray[row][x] > triangleArray[row][y]){
-            int temp = triangleArray[row][x];
-            triangleArray[row][x] = triangleArray[row][y];
-            triangleArray[row][y] = temp;
-        }
+    for ( int newRow = row + 1; newRow < 5; newRow++){
+        if(triangleArray[row][0] > triangleArray[newRow][0]){
+            int [] temp = triangleArray[row];
+            triangleArray[row] = triangleArray[newRow];
+            triangleArray[newRow] = temp;
         }
     }
 }
 
+
 System.out.println("");
 System.out.println("The array after sorting");
-for (int row = 0; row < 5; row++) {
-    for (int column = 0; column < (row *3 + 5); column++) {
+for (int row = 0; row < triangleArray.length; row++) {
+    for (int column = 0; column < triangleArray[row].length; column++) {
     System.out.print(triangleArray[row][column] + " ");
     }
 System.out.println();
